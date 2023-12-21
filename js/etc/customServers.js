@@ -15,13 +15,12 @@ $(window).ready(function() {
 
     $('#customServer').click(function() {
         if (!document.getElementById('customServerSelector').firstChild) {
+            let defaultServer = Cryptodog.xmpp.defaultServer;
+            if (window.location.host === new URL(Cryptodog.xmpp.defaultServerOnion.relay).hostname) {
+                defaultServer = Cryptodog.xmpp.defaultServerOnion;
+            }
             $('#customServerSelector').append(
-                Mustache.render(Cryptodog.templates['customServer'], {
-                    name: 'Cryptodog',
-                    domain: 'crypto.dog',
-                    xmpp: 'conference.crypto.dog',
-                    relay: 'wss://crypto.dog/websocket'
-                })
+                Mustache.render(Cryptodog.templates['customServer'], defaultServer)
             );
         }
 

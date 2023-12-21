@@ -10,6 +10,13 @@ Cryptodog.xmpp.defaultServer = {
     relay: 'wss://crypto.dog/websocket'
 };
 
+Cryptodog.xmpp.defaultServerOnion = {
+    name: 'Cryptodog (Onion Service)',
+    domain: 'crypto.dog',
+    conference: 'conference.crypto.dog',
+    relay: 'ws://doggyhegixd2dvx5bqkxlyqf2pjpu5y72nwiokkn7oegdjpva5ypvyqd.onion/websocket'
+};
+
 Cryptodog.xmpp.currentServer = {};
 
 $(window).ready(function() {
